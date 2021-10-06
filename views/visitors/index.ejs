@@ -1,0 +1,36 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+
+
+<main class="container">
+
+    <h1 class="display ">Visitors-Page</h1>
+    <div class="row">
+        <table>
+            <tr>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Email</th>
+            <th>Entry Date</th>
+            <th>Entry Time</th>
+            <th>Your Detailed Information</th>
+            
+          </tr>
+           <%  for(let visitor of visitors){ %> 
+        
+                    <tr>
+                    <td><%= visitor.name %> </td>
+                    <td><%= visitor.number %> </td>
+                    <td><%= visitor.email %> </td>
+                    <td><%= visitor.edate %> </td>
+                    <td><%= visitor.etime %> </td>
+                    <td><a href="/visitors/<%= visitor._id %> " class="btn btn-outline-success">View Details</a></td>
+                    </tr>
+                <% } %> 
+            </table>
+    </div>
+
+
+</main>
+
+<%- include('../partials/footer') %> 

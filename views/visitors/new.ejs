@@ -1,0 +1,41 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+
+
+<main class="container">
+
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="display-6">New Visitor</h1>
+            <form action="/visitors" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Number</label>
+                    <div class="input-group mb-3">
+                        <input type="text" name="number" id="number" class="form-control" placeholder="Contact Number"  aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" name="desc" id="desc"rows="5"></textarea>
+                </div>
+                Entry Date  
+                <input type="text" class="form-control" name="edate" id="edate" placeholder="edate" value="<%=new Date().getDate()+'-'+(new Date().getMonth()+1)+'-'+new Date().getFullYear()%>"><br>
+                Entry Time 
+                <input type="text" class="form-control" name="etime" id="etime" placeholder="etime" value="<%=new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();%>"><br>
+                <button type="submit" class="btn btn-success btn-small">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+
+<%- include('../partials/footer') %> 

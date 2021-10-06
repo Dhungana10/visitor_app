@@ -1,0 +1,30 @@
+<%- include("../partials/header") %> 
+<%- include("../partials/navbar") %> 
+
+
+<main class="container">
+
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="display-6">Edit Details</h1>
+            <form action="/visitors/<%= visitor._id %>?_method=PATCH" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<%= visitor.name %> ">
+                </div>
+                <div class="mb-3">
+                    <label for="num" class="form-label">Contact Number</label>
+                    <input class="form-control" type="text" name="num" id="num" placeholder="Number" value="<%= visitor.number %> ">
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea class="form-control" name="desc" id="desc"rows="5"><%= visitor.desc %> </textarea>
+                </div>
+
+               
+                <button type="submit" class="btn btn-success btn-small">Submit</button>
+            </form>
+        </div>
+    </div>
+</main>
+<%- include("../partials/footer") %> 
